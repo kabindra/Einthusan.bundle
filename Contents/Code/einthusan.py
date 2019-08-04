@@ -86,7 +86,7 @@ def parseUrl(url):
 	
 def requestWithHeaders(url, output=None):
 	cookieJar = cookielib.LWPCookieJar()	
-	headers=[('Origin','https://einthusan.tv'),('Referer','https://einthusan.tv/movie/browse/?lang=hindi'),('User-Agent',USER_AGENT)]
+	headers=[('Origin','https://einthusan.ca'),('Referer','https://einthusan.ca/movie/browse/?lang=hindi'),('User-Agent',USER_AGENT)]
 	htm=request(url,headers=headers,cookieJar=cookieJar,output=output)
 	return htm
 
@@ -96,9 +96,9 @@ def GetEinthusanData(url, debug=False):
 		id,lang = parseUrl(url)
 		cookieJar = cookielib.LWPCookieJar()
 		
-		headers=[('Origin','https://einthusan.tv'),('Referer','https://einthusan.tv/movie/browse/?lang=hindi'),('User-Agent',USER_AGENT)]
-		mainurl='https://einthusan.tv/movie/watch/%s/?lang=%s'%(id,lang)
-		mainurlajax='https://einthusan.tv/ajax/movie/watch/%s/?lang=%s'%(id,lang)
+		headers=[('Origin','https://einthusan.ca'),('Referer','https://einthusan.ca/movie/browse/?lang=hindi'),('User-Agent',USER_AGENT)]
+		mainurl='https://einthusan.ca/movie/watch/%s/?lang=%s'%(id,lang)
+		mainurlajax='https://einthusan.ca/ajax/movie/watch/%s/?lang=%s'%(id,lang)
 		
 		htm=request(mainurl,headers=headers,cookieJar=cookieJar)
 		
@@ -123,12 +123,12 @@ def GetEinthusanData(url, debug=False):
  
 	
 def Test():
-	url = 'https://einthusan.tv/movie/watch/9097/?lang=hindi'
+	url = 'https://einthusan.ca/movie/watch/9097/?lang=hindi'
 	d = GetEinthusanData(url=url,)
 	d = json.loads(d)
 	print (d)
 
 def Test2():
-	url = 'https://einthusan.tv'
+	url = 'https://einthusan.ca'
 	d = requestWithHeaders(url=url)
 	print (d)

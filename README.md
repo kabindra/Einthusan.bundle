@@ -1,7 +1,7 @@
 Einthusan.bundle
 ===================
 
-This is a plugin that creates a new channel in Plex Media Server to view content indexed by the website einthusan.tv
+This is a plugin that creates a new channel in Plex Media Server to view content indexed by the website einthusan.ca
 
 [Plex Support thread] (https://forums.plex.tv/index.php/topic/165072-rel-einthusan-channel-indian-movies/)
 

@@ -3,7 +3,7 @@
 
 ######################################################################################
 #
-#	Einthusan.com / Einthusan.tv
+#	Einthusan.com / Einthusan.ca
 #
 ######################################################################################
 
@@ -28,12 +28,12 @@ ICON_UNAV = "icon-unav.png"
 ICON_PREFS = "icon-prefs.png"
 ICON_LANG = "icon-lang.png"
 ICON_SOURCES = "icon-sources.png"
-BASE_URL = "https://einthusan.tv"
-SEARCH_URL = "https://einthusan.tv/search/"
+BASE_URL = "https://einthusan.ca"
+SEARCH_URL = "https://einthusan.ca/search/"
 PROXY_URL = "https://ssl-proxy.my-addr.org/myaddrproxy.php/"
 PROXY_PART = "/myaddrproxy.php/https/"
 PROXY_PART_REPLACE = "//"
-PROXY_PART2 = "/myaddrproxy.php/https/einthusan.tv/"
+PROXY_PART2 = "/myaddrproxy.php/https/einthusan.ca/"
 PROXY_PART2_REPLACE = "/"
 LAST_PROCESSED_URL = []
 VideoURL = {}
@@ -499,7 +499,7 @@ def initSlimerJS():
 	if python_dir == None:
 		python_dir = ""
 	
-	res = slimerjs.einthusan(python_dir=python_dir, firefox_dir=firefox_dir, url="https://einthusan.tv")
+	res = slimerjs.einthusan(python_dir=python_dir, firefox_dir=firefox_dir, url="https://einthusan.ca")
 	if res == "":
 		res = "Success"
 	Log("Initialized SlimerJS: " + res)
@@ -581,7 +581,7 @@ def AllAvailableSources2(furl, title, summary, thumb, year, rating, art, locatio
 	vidpath = furl.split('.tv/')[1]
 
 	for idx in EINTHUSAN_SERVER_INFO[location]["Servers"]:
-		furl = ("https://s" + str(idx+SERVER_OFFSET[0]) + ".einthusan.tv/" + vidpath)
+		furl = ("https://s" + str(idx+SERVER_OFFSET[0]) + ".einthusan.ca/" + vidpath)
 		ret_code = GetHttpStatus(url=furl)
 		if ret_code == "200":
 			oc.add(VideoClipObject(
@@ -607,14 +607,14 @@ def AvailableSourceFrom(furl, location, **kwargs):
 	except:
 		choice_str = '1'
 		
-	url = ("https://s" + choice_str + ".einthusan.tv/" + vidpath)
+	url = ("https://s" + choice_str + ".einthusan.ca/" + vidpath)
 	ret_code = GetHttpStatus(url=url)
 	
 	return url, choice_str, ret_code
 
 @route(PREFIX + "/DetermineCurrentServer")
 def DetermineCurrentServer(furl, location, **kwargs):
-	server_n = furl.split('.einthusan.tv')[0].strip('https://s')
+	server_n = furl.split('.einthusan.ca')[0].strip('https://s')
 	
 	del SERVER_OFFSET[:]
 	if int(server_n) > 100:

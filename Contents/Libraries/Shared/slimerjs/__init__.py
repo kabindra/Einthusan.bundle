@@ -62,6 +62,6 @@ def einthusan(python_dir, firefox_dir, url, debug=False):
 		return "error-fail - code execution error - " + str(err) + " " + str(output) + " " + str(file_cmd)
 
 def test():
-	print einthusan("/Applications/Firefox.app/Contents/MacOS/firefox","https://einthusan.tv/movie/watch/7757/?lang=hindi", debug=True)
+	print einthusan("/Applications/Firefox.app/Contents/MacOS/firefox","https://einthusan.ca/movie/watch/7757/?lang=hindi", debug=True)
 	
 #test()
