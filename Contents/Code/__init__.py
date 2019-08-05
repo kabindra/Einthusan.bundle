@@ -578,10 +578,10 @@ def AllAvailableSources(furl, title, summary, thumb, year, rating, art, **kwargs
 def AllAvailableSources2(furl, title, summary, thumb, year, rating, art, location, **kwargs):
 	
 	oc = ObjectContainer(title1 = unicode(title), art=thumb)	
-	vidpath = furl.split('.tv/')[1]
+	vidpath = furl.split('.io/')[1]
 
 	for idx in EINTHUSAN_SERVER_INFO[location]["Servers"]:
-		furl = ("https://s" + str(idx+SERVER_OFFSET[0]) + ".einthusan.ca/" + vidpath)
+		furl = ("https://cdn" + str(idx+SERVER_OFFSET[0]) + ".einthusan.io/" + vidpath)
 		ret_code = GetHttpStatus(url=furl)
 		if ret_code == "200":
 			oc.add(VideoClipObject(
@@ -602,19 +602,19 @@ def AvailableSourceFrom(furl, location, **kwargs):
 		location = 'San Jose'
 	
 	try:
-		vidpath = furl.split('.tv/')[1]
+		vidpath = furl.split('.io/')[1]
 		choice_str = str(random.choice(EINTHUSAN_SERVER_INFO[location]["Servers"]) + SERVER_OFFSET[0])
 	except:
 		choice_str = '1'
 		
-	url = ("https://s" + choice_str + ".einthusan.ca/" + vidpath)
+	url = ("https://cdn" + choice_str + ".einthusan.io/" + vidpath)
 	ret_code = GetHttpStatus(url=url)
 	
 	return url, choice_str, ret_code
 
 @route(PREFIX + "/DetermineCurrentServer")
 def DetermineCurrentServer(furl, location, **kwargs):
-	server_n = furl.split('.einthusan.ca')[0].strip('https://s')
+	server_n = furl.split('.einthusan.io')[0].strip('https://cdn')
 	
 	del SERVER_OFFSET[:]
 	if int(server_n) > 100:
@@ -707,7 +707,7 @@ def Bookmarks(title, **kwargs):
 		url = Dict[each]
 		#Log("url-----------" + url)
 		if url.find(TITLE.lower()) != -1 and 'http' in url and '.mp4' not in url:
-			if 'einthusan.com' in url:
+			if 'einthusan.ca' in url:
 				url = GetRedirector(url)
 				Dict[each] = url
 			oc.add(DirectoryObject(
