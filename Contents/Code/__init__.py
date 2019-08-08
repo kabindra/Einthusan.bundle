@@ -37,7 +37,7 @@ PROXY_PART2 = "/myaddrproxy.php/https/einthusan.ca/"
 PROXY_PART2_REPLACE = "/"
 LAST_PROCESSED_URL = []
 VideoURL = {}
-EINTHUSAN_SERVERS = ["Dallas","Washington","San Jose","Somerville","Toronto","London","Sydney"]
+EINTHUSAN_SERVERS = ["Dallas","Washington","Los Angeles"]
 EINTHUSAN_SERVER_INFO = {}
 
 SLIMERJS_INIT = []
@@ -645,47 +645,22 @@ def AddSourceInfo():
 	AUS_FLAG = "icon-aus.png"
 	
 	EINTHUSAN_SERVER_INFO["Dallas"] = {}
-	EINTHUSAN_SERVER_INFO["Dallas"]["Servers"]=[23,24,25,29,30,31,35,36,37,38,45]
+	EINTHUSAN_SERVER_INFO["Dallas"]["Servers"]=[2]
 	EINTHUSAN_SERVER_INFO["Dallas"]["Country"]="US"
 	EINTHUSAN_SERVER_INFO["Dallas"]["State"]="TX"
 	EINTHUSAN_SERVER_INFO["Dallas"]["Flag"]=US_FLAG
 	
 	EINTHUSAN_SERVER_INFO["Washington"] = {}
-	EINTHUSAN_SERVER_INFO["Washington"]["Servers"]=[1,2,3,4,5,6,7,8,9,10,11,13,41,44]
+	EINTHUSAN_SERVER_INFO["Washington"]["Servers"]=[1]
 	EINTHUSAN_SERVER_INFO["Washington"]["Country"]="US"
 	EINTHUSAN_SERVER_INFO["Washington"]["State"]="D.C."
 	EINTHUSAN_SERVER_INFO["Washington"]["Flag"]=US_FLAG
 	
-	EINTHUSAN_SERVER_INFO["San Jose"] = {}
-	EINTHUSAN_SERVER_INFO["San Jose"]["Servers"]=[19,20,21,22,46]
-	EINTHUSAN_SERVER_INFO["San Jose"]["Country"]="US"
-	EINTHUSAN_SERVER_INFO["San Jose"]["State"]="CA"
-	EINTHUSAN_SERVER_INFO["San Jose"]["Flag"]=US_FLAG
-	
-	EINTHUSAN_SERVER_INFO["Somerville"] = {}
-	EINTHUSAN_SERVER_INFO["Somerville"]["Servers"]=[12]
-	EINTHUSAN_SERVER_INFO["Somerville"]["Country"]="US"
-	EINTHUSAN_SERVER_INFO["Somerville"]["State"]="MA"
-	EINTHUSAN_SERVER_INFO["Somerville"]["Flag"]=US_FLAG
-	
-	EINTHUSAN_SERVER_INFO["Toronto"] = {}
-	EINTHUSAN_SERVER_INFO["Toronto"]["Servers"]=[26,27]
-	EINTHUSAN_SERVER_INFO["Toronto"]["Country"]="Canada"
-	EINTHUSAN_SERVER_INFO["Toronto"]["State"]=""
-	EINTHUSAN_SERVER_INFO["Toronto"]["Flag"]=CAN_FLAG
-	
-	EINTHUSAN_SERVER_INFO["London"] = {}
-	EINTHUSAN_SERVER_INFO["London"]["Servers"]=[14,15,16,17,18,32,33,39,40,42]
-	EINTHUSAN_SERVER_INFO["London"]["Country"]="UK"
-	EINTHUSAN_SERVER_INFO["London"]["State"]=""
-	EINTHUSAN_SERVER_INFO["London"]["Flag"]=UK_FLAG
-	
-	EINTHUSAN_SERVER_INFO["Sydney"] = {}
-	EINTHUSAN_SERVER_INFO["Sydney"]["Servers"]=[28,34,43]
-	EINTHUSAN_SERVER_INFO["Sydney"]["Country"]="Australia"
-	EINTHUSAN_SERVER_INFO["Sydney"]["State"]=""
-	EINTHUSAN_SERVER_INFO["Sydney"]["Flag"]=AUS_FLAG
-
+	EINTHUSAN_SERVER_INFO["Los Angeles"] = {}
+	EINTHUSAN_SERVER_INFO["Los Angeles"]["Servers"] = [3]
+	EINTHUSAN_SERVER_INFO["Los Angeles"]["Country"] = "US"
+	EINTHUSAN_SERVER_INFO["Los Angeles"]["State"] = "CA"
+	EINTHUSAN_SERVER_INFO["Los Angeles"]["Flag"] = US_FLAG
 
 def find_between( s, first, last ):
     try:
