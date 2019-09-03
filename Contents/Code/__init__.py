@@ -37,7 +37,7 @@ PROXY_PART2 = "/myaddrproxy.php/https/einthusan.ca/"
 PROXY_PART2_REPLACE = "/"
 LAST_PROCESSED_URL = []
 VideoURL = {}
-EINTHUSAN_SERVERS = ["Dallas","Washington","Los Angeles"]
+EINTHUSAN_SERVERS = ["Dallas","Washington","Los Angeles","London"]
 EINTHUSAN_SERVER_INFO = {}
 
 SLIMERJS_INIT = []
@@ -661,6 +661,12 @@ def AddSourceInfo():
 	EINTHUSAN_SERVER_INFO["Los Angeles"]["Country"] = "US"
 	EINTHUSAN_SERVER_INFO["Los Angeles"]["State"] = "CA"
 	EINTHUSAN_SERVER_INFO["Los Angeles"]["Flag"] = US_FLAG
+
+	EINTHUSAN_SERVER_INFO["London"] = {}
+	EINTHUSAN_SERVER_INFO["London"]["Servers"] = [4]
+	EINTHUSAN_SERVER_INFO["London"]["Country"] = "UK"
+	EINTHUSAN_SERVER_INFO["London"]["State"] = ""
+	EINTHUSAN_SERVER_INFO["London"]["Flag"] = UK_FLAG
 
 def find_between( s, first, last ):
     try:
