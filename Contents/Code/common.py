@@ -13,7 +13,7 @@ USER_AGENT = "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:33.0) Gecko/20100101 Firefo
 
 # SSL Web Proxy
 PROXY_URL = "https://ssl-proxy.my-addr.org/myaddrproxy.php/"
-PROXY_PART1 = "/myaddrproxy.php/https/einthusan.ca/"
+PROXY_PART1 = "/myaddrproxy.php/https/einthusan.tv/"
 PROXY_PART1_REPLACE = "/"
 PROXY_PART2A = "/myaddrproxy.php/https/"
 PROXY_PART2B = "/myaddrproxy.php/http/"

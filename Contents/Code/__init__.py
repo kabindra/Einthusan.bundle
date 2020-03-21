@@ -3,7 +3,7 @@
 
 ######################################################################################
 #
-#	Einthusan.com / Einthusan.ca
+#	Einthusan.com / Einthusan.tv
 #
 ######################################################################################
 
@@ -28,12 +28,12 @@ ICON_UNAV = "icon-unav.png"
 ICON_PREFS = "icon-prefs.png"
 ICON_LANG = "icon-lang.png"
 ICON_SOURCES = "icon-sources.png"
-BASE_URL = "https://einthusan.ca"
-SEARCH_URL = "https://einthusan.ca/search/"
+BASE_URL = "https://einthusan.tv"
+SEARCH_URL = "https://einthusan.tv/search/"
 PROXY_URL = "https://ssl-proxy.my-addr.org/myaddrproxy.php/"
 PROXY_PART = "/myaddrproxy.php/https/"
 PROXY_PART_REPLACE = "//"
-PROXY_PART2 = "/myaddrproxy.php/https/einthusan.ca/"
+PROXY_PART2 = "/myaddrproxy.php/https/einthusan.tv/"
 PROXY_PART2_REPLACE = "/"
 LAST_PROCESSED_URL = []
 VideoURL = {}
@@ -499,7 +499,7 @@ def initSlimerJS():
 	if python_dir == None:
 		python_dir = ""
 	
-	res = slimerjs.einthusan(python_dir=python_dir, firefox_dir=firefox_dir, url="https://einthusan.ca")
+	res = slimerjs.einthusan(python_dir=python_dir, firefox_dir=firefox_dir, url="https://einthusan.tv")
 	if res == "":
 		res = "Success"
 	Log("Initialized SlimerJS: " + res)
@@ -688,7 +688,7 @@ def Bookmarks(title, **kwargs):
 		url = Dict[each]
 		#Log("url-----------" + url)
 		if url.find(TITLE.lower()) != -1 and 'http' in url and '.mp4' not in url:
-			if 'einthusan.ca' in url:
+			if 'einthusan.tv' in url:
 				url = GetRedirector(url)
 				Dict[each] = url
 			oc.add(DirectoryObject(
